@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 public static class PostPostEndpoint
 {
-    public static void MapPostPostEndpoint(this IEndpointRouteBuilder app)
+    public static void MapCreatePostEndpoint(this IEndpointRouteBuilder app)
     {
         app.MapPost("/posts", async (CreatePostDto dto, AppDbContext db) =>
         {
