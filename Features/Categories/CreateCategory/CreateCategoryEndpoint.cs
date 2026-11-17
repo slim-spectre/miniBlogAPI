@@ -9,6 +9,6 @@ public static class CreateCategoryEndpoint
             if (error is not null) return Results.Conflict(new { Message = error });
 
             return Results.Created($"/categories/{category!.Id}", category);
-        });
+        }).AddEndpointFilter<ValidationFilter<CreateCategoryDto>>();
     }
 }

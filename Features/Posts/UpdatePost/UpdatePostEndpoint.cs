@@ -15,6 +15,6 @@ public static class UpdatePostEndpoint
                 };
             }
             return Results.Ok(post);
-        });
+        }).AddEndpointFilter<ValidationFilter<UpdatePostDto>>();;
     }
 }

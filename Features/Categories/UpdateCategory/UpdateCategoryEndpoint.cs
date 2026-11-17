@@ -12,6 +12,6 @@ public static class UpdateCategoryEndpoint
                     Results.Conflict(new { Message = error });
             }
             return Results.Ok(category);
-        });
+        }).AddEndpointFilter<ValidationFilter<UpdateCategoryDto>>();
     }
 }

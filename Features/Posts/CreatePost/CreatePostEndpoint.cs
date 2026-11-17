@@ -16,6 +16,6 @@ public static class PostPostEndpoint
             }
             return Results.Created($"/posts/{post!.Id}", post);
 
-        });
+        }).AddEndpointFilter<ValidationFilter<CreatePostDto>>();
     }
 }
